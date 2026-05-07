@@ -1,6 +1,6 @@
-################ English language ##################
-[en]
-label = "En"
-locale = "en-us"
-contentDir = "content/english"
+################ 中文（站点默认语言）##################
+[zh]
+label = "中文"
+locale = "zh-cn"
+contentDir = "content/zh"
 weight = 1

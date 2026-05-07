@@ -1,44 +1,44 @@
-############# English navigation ##############
+############# 中文导航 ##############
 
-# main menu
+# 主导航
 [[main]]
-name = "Home"
+name = "首页"
 url = "/"
 weight = 1
 
 [[main]]
-name = "Blog"
+name = "文章"
 url = "/blog"
 weight = 2
 
 [[main]]
-name = "About"
+name = "关于"
 url = "/about"
 weight = 3
 
 [[main]]
-name = "Contact"
+name = "联系"
 url = "/contact"
 weight = 4
 
 [[main]]
-name = "Categories"
+name = "分类"
 url = "/categories"
 weight = 5
 
 
-# footer menu
+# 页脚
 [[footer]]
-name = "Blog"
+name = "文章"
 url = "/blog"
 weight = 1
 
 [[footer]]
-name = "About"
+name = "关于"
 url = "/about"
 weight = 2
 
 [[footer]]
-name = "Privacy Policy"
+name = "隐私政策"
 url = "/privacy-policy"
 weight = 3

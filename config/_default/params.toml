@@ -11,7 +11,7 @@ logo_height = "32px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
-logo_text = "My Blog"
+logo_text = "我的博客"
 # navbar fixed to top
 navbar_fixed = true
 # theme-mode
@@ -27,7 +27,7 @@ google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
 # copyright
-copyright = "[Source](https://github.com/200410154831/myblog)"
+copyright = "[源码仓库](https://github.com/200410154831/myblog)"
 
 # Preloader
 # preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader
@@ -38,7 +38,7 @@ preloader = "" # use jpg, png, svg or gif format.
 # Navigation button
 [navigation_button]
 enable = true
-label = "Github"
+label = "GitHub"
 link = "https://github.com/200410154831/myblog"
 
 # LLMs Configuration
@@ -74,9 +74,9 @@ content = "<span class='text-center block'>♥️ Loving Hugoplate? <a class='un
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
-keywords = ["Blog", "Tech", "Hugo"]
-description = "Personal tech blog — notes, projects, and learnings."
-author = "200410154831"
+keywords = ["博客", "技术", "Hugo"]
+description = "个人技术博客 — 笔记、小项目与实践记录。"
+author = "博主"
 twitter = ""
 image = "images/og-image.png"
 
