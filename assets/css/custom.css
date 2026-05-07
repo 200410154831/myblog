@@ -121,16 +121,24 @@
   @apply my-2 text-inherit leading-[1.82];
 }
 
-/* --- 表格：表头稳重、表体略淡 --- */
+/* --- 表格：GFM 表头分隔行由 Markdown 保证；此处负责可读性与宽表不撑破版心 --- */
 .content.content--longread table {
-  @apply my-8 text-left text-sm md:text-[0.97rem];
+  @apply my-8 w-full max-w-full table-auto border-collapse text-left text-sm md:text-[0.97rem];
 }
+
+.content.content--longread th,
+.content.content--longread td {
+  @apply align-top break-words [overflow-wrap:anywhere];
+}
+
 .content.content--longread thead th {
   @apply bg-light/95 font-semibold text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
 }
+
 .content.content--longread tbody td {
   @apply text-text/88 dark:text-darkmode-text/84;
 }
+
 .content.content--longread tbody tr:nth-child(even) {
   @apply bg-body/40 dark:bg-darkmode-body/35;
 }

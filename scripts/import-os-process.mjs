@@ -52,6 +52,38 @@ function tailToFilename(tail) {
   return s;
 }
 
+function ensureMarkdownTableSeparators(text) {
+  const lines = text.split(/\r?\n/);
+  const out = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const prev = i > 0 ? lines[i - 1] : "";
+    const next = i + 1 < lines.length ? lines[i + 1] : "";
+    const prevOk =
+      i === 0 || prev.trim() === "" || !prev.trimStart().startsWith("|");
+    const isRow = (s) => s.trimStart().startsWith("|");
+    if (
+      prevOk &&
+      isRow(line) &&
+      next &&
+      isRow(next) &&
+      !/^\|\s*---/.test(line.trim()) &&
+      !/^\|\s*---/.test(next.trim())
+    ) {
+      const pc = (line.match(/\|/g) || []).length;
+      const npc = (next.match(/\|/g) || []).length;
+      if (pc === npc && pc >= 2) {
+        const cols = pc - 1;
+        out.push(line);
+        out.push("|" + Array(cols).fill(" --- ").join("|") + "|");
+        continue;
+      }
+    }
+    out.push(line);
+  }
+  return out.join("\n");
+}
+
 if (!fs.existsSync(srcMd)) {
   console.error("Missing:", srcMd);
   process.exit(1);
@@ -107,6 +139,8 @@ t = t.replace(/\|   \|   \|\r?\n\|---\|---\|\r?\n\|/g, "|");
 
 t = t.replace(/\|(\*\*[^|]+\*\*)\|(\*\*[^|]+\*\*)\|(\*\*[^|]+\*\*)\|/g, "| $1 | $2 | $3 |");
 t = t.replace(/\|(\*\*[^|]+\*\*)\|(\*\*[^|]+\*\*)\|(?!\|)/gm, "| $1 | $2 |");
+
+t = ensureMarkdownTableSeparators(t);
 
 t = t.replace(/\|(\*\*[^|]+\*\*)\|(\*\*[^|]+\*\*)\|(\*\*[^|]+\*\*)\|(\s*)\n\| --- \| --- \| --- \|(\s*)\n\| --- \| --- \| --- \|/g, "| $1 | $2 | $3 |$4\n| --- | --- | --- |$5\n");
 
