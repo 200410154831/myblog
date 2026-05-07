@@ -326,7 +326,7 @@ longread: true
 
 在 Linux 操作系统中，进程是通过一个特定的 C 语言结构体`task_struct` 来表示的，它定义在内核头文件 `<linux/sched.h>` 中。
 
-### `task_struct` 的核心字段
+#### `task_struct` 的核心字段
 
 - `**pid t_pid**`: 进程标识符（Process Identifier），用于唯一标识系统中的每一个进程。
 
