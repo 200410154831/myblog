@@ -114,6 +114,33 @@ t = t.replace(
   /(\| \*\*代码类型\*\*[^|]+\|[^|]+\|[^|]+\|)\n(\| --- \| --- \| --- \|)\n(\| --- \| --- \| --- \|)/g,
   "$1\n$2",
 );
+
+{
+  const hdr = "| **特性** | **fork()** | **exec()** |";
+  let from = 0;
+  while ((from = t.indexOf(hdr, from)) !== -1) {
+    const afterHdr = from + hdr.length;
+    const nl = t.indexOf("\n", afterHdr);
+    const secondLineStart = nl === -1 ? -1 : nl + 1;
+    const secondNl =
+      secondLineStart === -1 ? -1 : t.indexOf("\n", secondLineStart);
+    const secondLine =
+      secondLineStart === -1
+        ? ""
+        : t.slice(
+            secondLineStart,
+            secondNl === -1 ? undefined : secondNl,
+          ).trim();
+    const hasSeparator = /^\|(?:\s*---\s*\|){3}\s*$/.test(secondLine);
+    if (secondLine && !hasSeparator) {
+      t = t.slice(0, afterHdr) + "\n| --- | --- | --- |" + t.slice(afterHdr);
+      from = afterHdr + 25;
+    } else {
+      from = afterHdr + 1;
+    }
+  }
+}
+
 t = t.split("- **处理宏定义 (**`**#define**`**)**：").join("- **处理宏定义（`#define`）**：");
 t = t.split("- **包含头文件 (**`**#include**`**)**：").join("- **包含头文件（`#include`）**：");
 

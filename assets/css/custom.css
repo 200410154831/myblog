@@ -1,21 +1,142 @@
 /* Add your own custom styles here */
 
-/* 长文笔记：中文阅读节奏、插图与语义区隔（Markdown .content 内） */
+/* --------------------------------------------------------------------------
+   长文 longread：按语义组织的字号、颜色、字重与纵向节奏（中文阅读）
+   仅作用于带 .content--longread 的正文区，不影响站点其它页面。
+   -------------------------------------------------------------------------- */
 .content.content--longread {
   @apply prose-headings:scroll-mt-24;
+  @apply mx-auto max-w-[min(100%,46rem)] text-pretty antialiased;
+}
+
+/* 目录块：与正文在视觉上区隔，层级略收小 */
+.content.content--longread .table-of-content {
+  @apply mb-10 rounded-lg border border-border/55 bg-light/50 px-5 py-4 text-sm shadow-sm dark:border-darkmode-border/55 dark:bg-darkmode-light/30;
+}
+.content.content--longread .table-of-content ul {
+  @apply my-0 space-y-1.5;
+}
+.content.content--longread .table-of-content a {
+  @apply font-normal text-text/80 no-underline transition-colors hover:text-primary dark:text-darkmode-text/78 dark:hover:text-darkmode-primary;
 }
 
 .content.content--longread > *:first-child {
   @apply mt-0;
 }
 
-.content.content--longread p,
+/* --- 标题语义：篇 / 章 / 节 / 目 --- */
+.content.content--longread h2 {
+  @apply mt-12 mb-5 border-b border-border/65 pb-3 text-xl font-bold leading-snug tracking-tight text-text-dark dark:border-darkmode-border/65 dark:text-darkmode-text-dark md:text-[1.65rem];
+}
+.content.content--longread h2:first-of-type {
+  @apply mt-0;
+}
+
+.content.content--longread h3 {
+  @apply mt-10 mb-3 border-l-[3px] border-primary/50 pl-3.5 text-[1.05rem] font-semibold leading-snug text-text-dark dark:border-darkmode-primary/55 dark:text-darkmode-text-dark md:text-lg;
+}
+
+.content.content--longread h4 {
+  @apply mt-8 mb-2.5 text-base font-semibold leading-snug text-primary dark:text-darkmode-primary md:text-[1.06rem];
+}
+
+.content.content--longread h5,
+.content.content--longread h6 {
+  @apply mt-6 mb-2 text-[0.94rem] font-semibold leading-snug text-text/82 dark:text-darkmode-text/78;
+}
+
+/* 导读入口：文首第一个二级标题后的首段略放大，作为“导语” */
+.content.content--longread h2:first-of-type + p {
+  @apply text-[1.06rem] leading-[1.85] text-text/92 dark:text-darkmode-text/88 md:text-[1.1rem];
+}
+
+/* --- 正文与列表 --- */
+.content.content--longread p {
+  @apply my-4 text-[0.975rem] leading-[1.9] text-text/90 dark:text-darkmode-text/86 md:text-[1.02rem];
+}
+
+.content.content--longread ul,
+.content.content--longread ol {
+  @apply my-5 space-y-2.5;
+}
+
+.content.content--longread ul {
+  @apply list-disc pl-[1.35em] marker:text-primary/75 dark:marker:text-darkmode-primary/70;
+}
+
+.content.content--longread ol {
+  @apply list-decimal pl-[1.35em] marker:font-semibold marker:text-primary/80 dark:marker:text-darkmode-primary/75;
+}
+
 .content.content--longread li {
-  @apply leading-[1.85] text-[0.98rem] md:text-base;
+  @apply text-[0.975rem] leading-[1.85] text-text/90 dark:text-darkmode-text/86 md:text-[1.02rem];
+}
+
+.content.content--longread li > p {
+  @apply my-2;
+}
+
+/* 强调：术语略深于正文，不必通篇漆黑 */
+.content.content--longread strong {
+  @apply font-semibold text-text-dark dark:text-darkmode-text-dark;
+}
+
+/* 辅助强调：比正文略深、比 strong 略轻，避免与链接同色 */
+.content.content--longread em {
+  @apply not-italic text-text-dark/88 dark:text-darkmode-text-dark/82;
+}
+
+@supports (font-variation-settings: normal) {
+  .content.content--longread em:lang(en),
+  .content.content--longread em:lang(en-US) {
+    font-style: italic;
+    @apply text-text-dark/85 dark:text-darkmode-text-dark/80;
+  }
+}
+
+/* 正文内链接：主色 + 悬停，避免与强调混淆 */
+.content.content--longread a:not(.btn) {
+  @apply font-medium text-primary underline decoration-primary/35 underline-offset-[3px] transition-colors hover:decoration-primary/80 dark:text-darkmode-primary dark:decoration-darkmode-primary/40 dark:hover:decoration-darkmode-primary/85;
+}
+
+.content.content--longread .table-of-content a:not(.btn) {
+  @apply font-normal decoration-transparent;
+}
+
+/* 行内代码：与主题色呼应，区别于普通文字与粗体 */
+.content.content--longread p code,
+.content.content--longread li code,
+.content.content--longread td code,
+.content.content--longread th code,
+.content.content--longread h3 code,
+.content.content--longread h4 code {
+  @apply rounded-md border border-border/45 bg-light px-1.5 py-0.5 text-[0.88em] font-medium text-primary dark:border-darkmode-border/55 dark:bg-darkmode-light/85 dark:text-darkmode-primary;
+}
+
+/* --- 引用：长文内不用标题级大字号，保持与正文同阶略强调 --- */
+.content.content--longread blockquote {
+  @apply my-8 rounded-md border border-border/55 border-l-[4px] border-l-primary/55 bg-light/40 py-4 pl-5 pr-4 text-[0.98rem] font-normal not-italic leading-[1.82] text-text/88 shadow-none dark:border-darkmode-border/55 dark:border-l-darkmode-primary/55 dark:bg-darkmode-light/25 dark:text-darkmode-text/84 md:text-[1.02rem];
+}
+.content.content--longread blockquote p {
+  @apply my-2 text-inherit leading-[1.82];
+}
+
+/* --- 表格：表头稳重、表体略淡 --- */
+.content.content--longread table {
+  @apply my-8 text-left text-sm md:text-[0.97rem];
+}
+.content.content--longread thead th {
+  @apply bg-light/95 font-semibold text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
+}
+.content.content--longread tbody td {
+  @apply text-text/88 dark:text-darkmode-text/84;
+}
+.content.content--longread tbody tr:nth-child(even) {
+  @apply bg-body/40 dark:bg-darkmode-body/35;
 }
 
 .content.content--longread hr {
-  @apply my-12 border-border/80 dark:border-darkmode-border/80;
+  @apply my-12 border-border/75 dark:border-darkmode-border/75;
 }
 
 .content.content--longread img {
@@ -28,17 +149,4 @@
 
 .content.content--longread .process-figure-row img {
   @apply my-0;
-}
-
-.content.content--longread ul,
-.content.content--longread ol {
-  @apply my-4 space-y-2;
-}
-
-.content.content--longread blockquote {
-  @apply my-8 text-lg leading-relaxed;
-}
-
-.content.content--longread table {
-  @apply text-sm md:text-base;
 }

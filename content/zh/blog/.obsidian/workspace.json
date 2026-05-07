@@ -11,10 +11,14 @@
             "id": "ec083952ff3c4715",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "os-process-fundation/index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "index"
             }
           }
         ]
@@ -180,6 +184,7 @@
   },
   "active": "031efcf1e007748a",
   "lastOpenFiles": [
+    "HTML import/进程（Process）.md",
     "os-process-fundation/cover.png",
     "jin-cheng-process/index.md",
     "jin-cheng-process",
@@ -193,10 +198,8 @@
     "os-process-fundation/fig-14.png",
     "os-process-fundation/fig-13.png",
     "os-process-fundation/fig-12.png",
-    "os-process-fundation/fig-11.png",
     "os-process-fundation",
     "_index.md",
-    "HTML import/进程（Process）.md",
     "HTML import/Attachments",
     "HTML import",
     "Evernote/进程（Process）/_resources/进程（Process）.resources",
