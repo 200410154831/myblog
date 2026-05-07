@@ -5,7 +5,7 @@ description: "通俗理解进程与程序的区别、编译链接、ELF、内存
 date: 2026-05-07T12:00:00+08:00
 image: "fig-01.png"
 categories: ["笔记", "操作系统"]
-author: "作者甲"
+author: "博主"
 tags: ["进程", "Linux", "操作系统", "系统调用"]
 draft: false
 ---
