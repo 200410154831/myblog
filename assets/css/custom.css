@@ -1,1 +1,44 @@
 /* Add your own custom styles here */
+
+/* 长文笔记：中文阅读节奏、插图与语义区隔（Markdown .content 内） */
+.content.content--longread {
+  @apply prose-headings:scroll-mt-24;
+}
+
+.content.content--longread > *:first-child {
+  @apply mt-0;
+}
+
+.content.content--longread p,
+.content.content--longread li {
+  @apply leading-[1.85] text-[0.98rem] md:text-base;
+}
+
+.content.content--longread hr {
+  @apply my-12 border-border/80 dark:border-darkmode-border/80;
+}
+
+.content.content--longread img {
+  @apply my-8 rounded-lg border border-border/50 shadow-sm dark:border-darkmode-border/60;
+}
+
+.content.content--longread .process-figure-row {
+  @apply my-10 space-y-6;
+}
+
+.content.content--longread .process-figure-row img {
+  @apply my-0;
+}
+
+.content.content--longread ul,
+.content.content--longread ol {
+  @apply my-4 space-y-2;
+}
+
+.content.content--longread blockquote {
+  @apply my-8 text-lg leading-relaxed;
+}
+
+.content.content--longread table {
+  @apply text-sm md:text-base;
+}

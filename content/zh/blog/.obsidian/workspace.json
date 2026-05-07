@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "91c6cad16140495e",
+        "id": "4f620caf2ab0f3c2",
         "type": "tabs",
         "children": [
           {
-            "id": "d5b7a18e82c49cfe",
+            "id": "ec083952ff3c4715",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -178,13 +178,16 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d5b7a18e82c49cfe",
+  "active": "031efcf1e007748a",
   "lastOpenFiles": [
-    "os-process-fundation/index.md",
+    "os-process-fundation/cover.png",
+    "jin-cheng-process/index.md",
+    "jin-cheng-process",
     "os-process-fundation/fig-20.png",
     "os-process-fundation/fig-19.png",
     "os-process-fundation/fig-18.png",
     "os-process-fundation/fig-17.png",
+    "os-process-fundation/index.md",
     "os-process-fundation/fig-16.png",
     "os-process-fundation/fig-15.png",
     "os-process-fundation/fig-14.png",
@@ -192,12 +195,14 @@
     "os-process-fundation/fig-12.png",
     "os-process-fundation/fig-11.png",
     "os-process-fundation",
+    "_index.md",
     "HTML import/进程（Process）.md",
-    "os-process-fundation/index.md",
-    "os-process-fundation",
     "HTML import/Attachments",
     "HTML import",
-    "_index.md",
+    "Evernote/进程（Process）/_resources/进程（Process）.resources",
+    "Evernote/进程（Process）/_resources",
+    "Evernote/进程（Process）",
+    "Evernote",
     "进程.md"
   ]
 }
