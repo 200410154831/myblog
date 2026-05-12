@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "4c2eca1f5bd20ce7",
+        "id": "a6ae899519f146e3",
         "type": "tabs",
         "children": [
           {
-            "id": "7a4bcb14941da80e",
+            "id": "d5694228de97626a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "image",
+              "state": {
+                "file": "dspy-source-reading/cover.png"
+              },
+              "icon": "lucide-image",
+              "title": "cover"
             }
           }
         ]
@@ -180,13 +182,21 @@
   },
   "active": "031efcf1e007748a",
   "lastOpenFiles": [
+    "what-is-agentic-ai/cover.png",
+    "dspy-source-reading/index.md",
+    "dspy-source-reading/cover.png",
+    "dspy-source-reading",
+    "what-is-agentic-ai/index.md",
+    "what-is-agentic-ai/image.png",
+    "what-is-agentic-ai",
+    "Notion/Agent系列：DSPy源码阅读.md",
+    "Notion",
     "Agent系列：什么是 Agentic AI/image.png",
     "Agent系列：什么是 Agentic AI/index.md",
     "Agent系列：什么是 Agentic AI/cover.png",
     "Agent系列：什么是 Agentic AI",
     "image.png",
     "Notion/Agent系列：什么是 Agentic AI.md",
-    "Notion",
     "os-process-fundation/index.md",
     "HTML import/进程（Process）.md",
     "os-process-fundation/cover.png",
@@ -195,18 +205,12 @@
     "os-process-fundation/fig-20.png",
     "os-process-fundation/fig-19.png",
     "os-process-fundation/fig-18.png",
-    "os-process-fundation/fig-17.png",
-    "os-process-fundation/fig-16.png",
-    "os-process-fundation/fig-15.png",
-    "os-process-fundation/fig-14.png",
     "os-process-fundation",
     "_index.md",
     "HTML import/Attachments",
     "HTML import",
     "Evernote/进程（Process）/_resources/进程（Process）.resources",
     "Evernote/进程（Process）/_resources",
-    "Evernote/进程（Process）",
-    "Evernote",
     "进程.md"
   ]
 }
